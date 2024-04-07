@@ -1,6 +1,6 @@
 function sendLocationToBackend(latitude, longitude){
 //sends an HTTP POST request to flask backend
-    fetch('/api/location', {
+    fetch('http://127.0.0.1:5000/api/location', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ function sendLocationToBackend(latitude, longitude){
     });
 
 }
-
+//this function actually retrieves the location of the user
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -38,5 +38,5 @@ function getLocation() {
         console.error('Geolocation is not supported by this browser.');
     }
 }
-
+//this exports the users data 
 export default getLocation;

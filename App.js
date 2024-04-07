@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import LocationInput from './geolocation';
+import DistanceRoutes from './DistanceRoutes';
 
-function App() {
+const App = () => {
+  const [distances, setDistances] = useState([]);
+  const [routes, setRoutes] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  const handleLocationSubmit = async ({ latitude, longitude }) => {
+    setLoading(true);
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/location', { latitude, longitude });
+      setDistances(response.data.distances);
+      setRoutes(response.data.routes);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Distance and Route Visualizer</h1>
+      <LocationInput onLocationSubmit={handleLocationSubmit} />
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <DistanceRoutes distances={distances} routes={routes} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

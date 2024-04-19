@@ -1,17 +1,6 @@
-for everything you need to do
-
-on the command line do: pip install flask (this will install flask for you, you will need to have python installed on your machine obviously)
-  flask is what runs the backend in python
-
-go to this website https://nodejs.org/en and install node on your machine (this creates an environment for you to run javascript)
-after you do all this you can download all of the files in the repository
-
-AT THE MOMENT THE ONLY FILES THAT HAVE BEEN EDITED ARE testingComponent.js (this is the react component i do not fully understand it) , geolocation.js (this is to get the location of the user) , AND app.py (this is what the back end runs on)
-
-http://127.0.0.1:5000/ opening this link in the browser should take you to the backend in the browser, it may say NOT FOUND bc i havent been able to configure it yet
-
-the information below is what you can use to navigate the react stuff
-mainly for testing we will use NPM START so we can run the app and then you can follow the local host link it gives you in the terminal to view it in the browser
+This fullstack webapp that I created with the help of my groupmate for the hackathon at Youngstown State University in April of 2024 has been created
+in order to capture the users geographical coordinates and utilize it in order to find the best route to each city within the line of totality in Ohio
+for the 2024 eclipse
 
 '''THIS IS AUTO GENERATED BEYOND THIS POINT'''
 # Getting Started with Create React App

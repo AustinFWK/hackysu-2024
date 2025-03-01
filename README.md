@@ -2,7 +2,7 @@ This fullstack webapp that I created with the help of my groupmate for the hacka
 in order to capture the users geographical coordinates and utilize it in order to find the best route to each city within the line of totality in Ohio
 for the 2024 Solar Eclipse. This was my first project using React and JavaScript alongside Flask, so it is a good reminder that we all start somewhere. 
 
-'''THIS IS AUTO GENERATED BEYOND THIS POINT'''
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
